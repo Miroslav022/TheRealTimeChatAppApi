@@ -1,0 +1,11 @@
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\bin\Debug\net8.0\RealTimeChatApp.Domain.deps.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\bin\Debug\net8.0\RealTimeChatApp.Domain.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\bin\Debug\net8.0\RealTimeChatApp.Domain.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.AssemblyInfoInputs.cache
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.AssemblyInfo.cs
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\refint\RealTimeChatApp.Domain.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\ref\RealTimeChatApp.Domain.dll

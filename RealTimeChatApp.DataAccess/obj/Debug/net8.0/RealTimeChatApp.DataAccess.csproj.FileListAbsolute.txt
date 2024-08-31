@@ -1,0 +1,17 @@
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.DataAccess.deps.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.DataAccess.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.DataAccess.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.Domain.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.Domain.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.csproj.AssemblyReference.cache
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.AssemblyInfoInputs.cache
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.AssemblyInfo.cs
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.csproj.CoreCompileInputs.cache
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTime.D9F9EF4D.Up2Date
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\refint\RealTimeChatApp.DataAccess.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\ref\RealTimeChatApp.DataAccess.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\bin\Debug\net8.0\RealTimeChatApp.DataAccess.runtimeconfig.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.DataAccess\obj\Debug\net8.0\RealTimeChatApp.DataAccess.genruntimeconfig.cache
