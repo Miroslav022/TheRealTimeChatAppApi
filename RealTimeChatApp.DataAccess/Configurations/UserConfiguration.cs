@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using RealTimeChatApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RealTimeChatApp.Domain.Entities;
 
-namespace RealTimeChatApp.DataAccess.Configurations
+namespace RealTimeChatApp.Infrastructure.Configurations
 {
     internal class UserConfiguration : EntityConfiguration<User>
     {
@@ -35,11 +30,11 @@ namespace RealTimeChatApp.DataAccess.Configurations
             builder.Property(x => x.IsBlocked)
                    .HasDefaultValue(false);
 
-            builder.Property(x=>x.ProfilePicture)
+            builder.Property(x => x.ProfilePicture)
                    .HasDefaultValue("defaultAvatar.png")
                    .IsRequired();
 
-            builder.Property(x=>x.IsActive).HasDefaultValue(true);
+            builder.Property(x => x.IsActive).HasDefaultValue(true);
 
         }
     }

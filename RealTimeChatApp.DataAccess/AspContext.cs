@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using RealTimeChatApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RealTimeChatApp.Domain.Entities;
 
-namespace RealTimeChatApp.DataAccess
+namespace RealTimeChatApp.Infrastructure
 {
     public class AspContext : DbContext
     {
@@ -20,25 +15,26 @@ namespace RealTimeChatApp.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
             base.OnModelCreating(modelBuilder);
         }
         public override int SaveChanges()
         {
-            IEnumerable<EntityEntry> entries = this.ChangeTracker.Entries();
-            foreach (EntityEntry entry in entries) { 
-                if(entry.State == EntityState.Added)
+            IEnumerable<EntityEntry> entries = ChangeTracker.Entries();
+            foreach (EntityEntry entry in entries)
+            {
+                if (entry.State == EntityState.Added)
                 {
-                    if(entry.Entity is Entity e)
+                    if (entry.Entity is Entity e)
                     {
                         e.IsDeleted = false;
                         e.CreatedAt = DateTime.UtcNow;
                     }
 
                 }
-                if(entry.State == EntityState.Modified)
+                if (entry.State == EntityState.Modified)
                 {
-                    if(entry.Entity is Entity e)
+                    if (entry.Entity is Entity e)
                     {
                         e.UpdatedAt = DateTime.UtcNow;
                     }

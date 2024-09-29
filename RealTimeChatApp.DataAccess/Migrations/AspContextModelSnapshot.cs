@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RealTimeChatApp.DataAccess;
+using RealTimeChatApp.Infrastructure;
 
 #nullable disable
 
-namespace RealTimeChatApp.DataAccess.Migrations
+namespace RealTimeChatApp.Infrastructure.Migrations
 {
     [DbContext(typeof(AspContext))]
     partial class AspContextModelSnapshot : ModelSnapshot
@@ -215,7 +215,7 @@ namespace RealTimeChatApp.DataAccess.Migrations
 
                     b.HasIndex("MessageId");
 
-                    b.ToTable("Media");
+                    b.ToTable("Medias");
                 });
 
             modelBuilder.Entity("RealTimeChatApp.Domain.Message", b =>
@@ -299,7 +299,7 @@ namespace RealTimeChatApp.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MessageType");
+                    b.ToTable("MessageTypes");
                 });
 
             modelBuilder.Entity("RealTimeChatApp.Domain.Notification", b =>
@@ -375,7 +375,7 @@ namespace RealTimeChatApp.DataAccess.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<DateTime>("LastLogin")
+                    b.Property<DateTime?>("LastLogin")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PasswordHash")

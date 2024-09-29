@@ -9,3 +9,4 @@ D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTim
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\refint\RealTimeChatApp.Domain.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.pdb
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\ref\RealTimeChatApp.Domain.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\RealTimeChatApp.Domain\obj\Debug\net8.0\RealTimeChatApp.Domain.sourcelink.json

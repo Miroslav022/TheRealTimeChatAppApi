@@ -1,14 +1,39 @@
 using Real_Time_Chat_App.SignalR;
-using MediatR;
-using RealTimeChatApp.DataAccess;
+using FluentValidation;
+using RealTimeChatApp.Application.Behaviors;
+using RealTimeChatApp.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
+using RealTimeChatApp.Application.Abstractions.ValidationRules;
+using RealTimeChatApp.Infrastructure.ValidationRules;
+using RealTimeChatApp.Application.Abstractions.Repositories.UserRepository;
+using RealTimeChatApp.Infrastructure.Repositories.UserRepository;
+using RealTimeChatApp.Application.Abstractions.Repositories;
+using RealTimeChatApp.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Real_Time_Chat_App.OptionsSetup;
+using RealTimeChatApp.Application.Abstractions.Jwt;
+using RealTimeChatApp.Infrastructure.Authentication;
+using Microsoft.AspNetCore.Authentication;
+using RealTimeChatApp.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly));
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly);
+});
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+builder.Services.AddTransient<IUserValidationRules, UserValidationRules>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IJwtProvider, JwtProvider>();
+builder.Services.AddTransient<RealTimeChatApp.Application.Services.AuthenticationService, RealTimeChatApp.Application.Services.AuthenticationService>();
+builder.Services.AddValidatorsFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly, includeInternalTypes: true);
 
 builder.Services.AddDbContext<AspContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 builder.Services.AddSignalR();
 builder.Services.AddControllers();
@@ -16,6 +41,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
+builder.Services.ConfigureOptions<JwtOptionsSetup>();
+builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("reactApp", builder =>
@@ -39,6 +68,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

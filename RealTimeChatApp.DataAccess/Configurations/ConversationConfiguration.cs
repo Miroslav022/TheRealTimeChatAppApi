@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using RealTimeChatApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RealTimeChatApp.Domain.Entities;
 
-namespace RealTimeChatApp.DataAccess.Configurations
+namespace RealTimeChatApp.Infrastructure.Configurations
 {
     internal class ConversationConfiguration : EntityConfiguration<Conversation>
     {
@@ -19,8 +14,8 @@ namespace RealTimeChatApp.DataAccess.Configurations
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.Property(x => x.GroupName).HasMaxLength(30);
-            builder.Property(x=>x.IsGroup).HasDefaultValue(false);
-            
+            builder.Property(x => x.IsGroup).HasDefaultValue(false);
+
         }
     }
 }

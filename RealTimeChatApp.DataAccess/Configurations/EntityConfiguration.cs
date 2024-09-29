@@ -1,20 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using RealTimeChatApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RealTimeChatApp.Domain.Entities;
 
-namespace RealTimeChatApp.DataAccess.Configurations
+namespace RealTimeChatApp.Infrastructure.Configurations
 {
     internal abstract class EntityConfiguration<T> : IEntityTypeConfiguration<T> where T : Entity
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
             builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
-            builder.Property(x=>x.IsDeleted).HasDefaultValue(false);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
             ConfigureEntity(builder);
         }
 

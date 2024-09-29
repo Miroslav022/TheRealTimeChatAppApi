@@ -1,21 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using RealTimeChatApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RealTimeChatApp.Domain.Entities;
 
-namespace RealTimeChatApp.DataAccess.Configurations
+namespace RealTimeChatApp.Infrastructure.Configurations
 {
     internal class MessageConversation : EntityConfiguration<Message>
     {
         public override void ConfigureEntity(EntityTypeBuilder<Message> builder)
         {
             builder.HasOne(x => x.Conversation)
-                   .WithMany(x=>x.Messages)
-                   .HasForeignKey(x=>x.ConversationId)
+                   .WithMany(x => x.Messages)
+                   .HasForeignKey(x => x.ConversationId)
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.Sender)
@@ -23,12 +18,12 @@ namespace RealTimeChatApp.DataAccess.Configurations
                    .HasForeignKey(x => x.SenderId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(x=>x.MessageType)
-                   .WithMany(x=>x.Messages)
-                   .HasForeignKey(x=> x.MessageTypeId)
+            builder.HasOne(x => x.MessageType)
+                   .WithMany(x => x.Messages)
+                   .HasForeignKey(x => x.MessageTypeId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Property(x=>x.IsRead).HasDefaultValue(false);
+            builder.Property(x => x.IsRead).HasDefaultValue(false);
 
             builder.HasOne(x => x.RepliedToMessage)
                    .WithMany(x => x.Replies)

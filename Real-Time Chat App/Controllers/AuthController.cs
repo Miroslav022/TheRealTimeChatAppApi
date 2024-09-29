@@ -1,31 +1,43 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Real_Time_Chat_App.Abstraction;
+using RealTimeChatApp.Application.UseCases.Users.Commands.Login;
 using RealTimeChatApp.Application.UseCases.Users.Commands.RegisterUser;
+using RealTimeChatApp.Domain.Shared;
 
 namespace Real_Time_Chat_App.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : ApiController
     {
-        private readonly IMediator _mediator;
 
-        public AuthController(IMediator mediator)
+        public AuthController(ISender sender) : base(sender)
         {
-            _mediator = mediator;
+
         }
 
         [HttpPost]
         public async Task<IActionResult> Register([FromBody] UserRegistrationCommand command)
         {
-            if (!ModelState.IsValid)
+            Result result = await Sender.Send(command);
+            if (result.IsFailure)
             {
-                return BadRequest(ModelState);
+                return HandleFailure(result);
             }
+            return Ok(result);
+        }
 
-            await _mediator.Send(command);
-            return Ok("");
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginMember([FromBody] LoginCommand command, CancellationToken cancellationToken)
+        {
+            Result<string> tokenResult = await Sender.Send(command, cancellationToken);
+            if (tokenResult.IsFailure)
+            {
+                return HandleFailure(tokenResult);
+            }
+            return Ok(tokenResult.Value);
         }
     }
 }

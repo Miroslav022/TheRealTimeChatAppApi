@@ -2,10 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
 
-namespace RealTimeChatApp.DataAccess
+namespace RealTimeChatApp.Infrastructure
 {
     internal class AspContextFactory : IDesignTimeDbContextFactory<AspContext>
     {
@@ -25,7 +24,7 @@ namespace RealTimeChatApp.DataAccess
 
             return new AspContext(optionBuilder.Options);
 
-            
+
         }
     }
 }

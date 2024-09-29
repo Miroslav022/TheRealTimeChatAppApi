@@ -1,5 +1,4 @@
-﻿using RealTimeChatApp.Application.Command;
-
+﻿using RealTimeChatApp.Application.Abstractions.Command;
 
 namespace RealTimeChatApp.Application.UseCases.Users.Commands.RegisterUser;
 

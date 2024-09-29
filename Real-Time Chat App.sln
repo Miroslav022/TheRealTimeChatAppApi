@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Real-Time Chat App", "Real-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeChatApp.Domain", "RealTimeChatApp.Domain\RealTimeChatApp.Domain.csproj", "{51DC20C7-211F-4F7F-A8D9-460BC96ECB5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeChatApp.DataAccess", "RealTimeChatApp.DataAccess\RealTimeChatApp.DataAccess.csproj", "{3A3B13FC-7CEE-4B9B-9E96-B722175B7390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeChatApp.Infrastructure", "RealTimeChatApp.DataAccess\RealTimeChatApp.Infrastructure.csproj", "{3A3B13FC-7CEE-4B9B-9E96-B722175B7390}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeChatApp.Application", "RealTimeChatApp.Application\RealTimeChatApp.Application.csproj", "{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeChatApp.Application", "RealTimeChatApp.Application\RealTimeChatApp.Application.csproj", "{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

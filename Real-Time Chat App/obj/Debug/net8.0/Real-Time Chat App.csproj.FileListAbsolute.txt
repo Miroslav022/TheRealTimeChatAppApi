@@ -30,10 +30,8 @@ D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Ti
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Application.dll
-D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.DataAccess.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Domain.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Application.pdb
-D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.DataAccess.pdb
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Domain.pdb
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\staticwebassets.build.json
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\staticwebassets.development.json
@@ -90,3 +88,8 @@ D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Ti
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\MediatR.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Infrastructure.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\RealTimeChatApp.Infrastructure.pdb
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\Real-Time Chat App.sourcelink.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
