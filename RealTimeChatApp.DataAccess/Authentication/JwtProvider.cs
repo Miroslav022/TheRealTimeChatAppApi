@@ -20,9 +20,9 @@ public sealed class JwtProvider : IJwtProvider
     public string Generate(User user)
     {
         var claims = new Claim[] { 
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email.ToString()),
-            new Claim(JwtRegisteredClaimNames.Name, user.Username.ToString())
+            new (JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new (JwtRegisteredClaimNames.Email, user.Email.ToString()),
+            new (JwtRegisteredClaimNames.UniqueName, user.Username.ToString())
         };
 
         var signingCredentials = new SigningCredentials(
@@ -37,7 +37,7 @@ public sealed class JwtProvider : IJwtProvider
             claims,
             null,
             DateTime.UtcNow.AddHours(1),
-            null
+            signingCredentials
             );
 
         string tokenValue = new JwtSecurityTokenHandler().WriteToken(token);

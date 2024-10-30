@@ -18,7 +18,7 @@ namespace Real_Time_Chat_App.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost("registration")]
         public async Task<IActionResult> Register([FromBody] UserRegistrationCommand command)
         {
             Result result = await Sender.Send(command);

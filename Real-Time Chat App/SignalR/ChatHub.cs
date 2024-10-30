@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Real_Time_Chat_App.SignalR
 {
+    //[Authorize]
     public sealed class ChatHub : Hub
     {
-        public override async Task OnConnectedAsync()
+        public override Task OnConnectedAsync()
         {
-            await Clients.All.SendAsync("ReceiveMessage", $"{Context.ConnectionId} has joined");
+            var user = Context?.User?.Identity?.Name;
+            
+            return base.OnConnectedAsync();
         }
 
         private string GenerateRoomId(string user1Id, string user2Id)
@@ -21,13 +25,12 @@ namespace Real_Time_Chat_App.SignalR
             await Groups.AddToGroupAsync(Context.ConnectionId, roomId);
 
             await Clients.Caller.SendAsync("JoinedRoom", roomId);
-
         }
 
         public async Task SendMessage(string user1Id, string user2Id, string message)
         {
             var roomId = GenerateRoomId(user1Id, user2Id);
-            await Clients.Group(roomId).SendAsync("ReceiveMessage", Context.User.Identity.Name, message);
+            await Clients.Group(roomId).SendAsync("ReceivePrivateMessage", Context.User.Identity.Name, message, $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
         }
 
         public async Task JoinGroup(string groupName)

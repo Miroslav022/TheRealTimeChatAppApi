@@ -14,8 +14,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Real_Time_Chat_App.OptionsSetup;
 using RealTimeChatApp.Application.Abstractions.Jwt;
 using RealTimeChatApp.Infrastructure.Authentication;
-using Microsoft.AspNetCore.Authentication;
-using RealTimeChatApp.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
