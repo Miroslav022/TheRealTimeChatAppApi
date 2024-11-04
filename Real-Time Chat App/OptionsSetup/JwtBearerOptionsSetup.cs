@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RealTimeChatApp.Infrastructure.Authentication;
-using System.Security.Claims;
 using System.Text;
 
 namespace Real_Time_Chat_App.OptionsSetup;
@@ -33,14 +32,12 @@ public class JwtBearerOptionsSetup : IPostConfigureOptions<JwtBearerOptions>
         {
             OnMessageReceived = Context =>
             {
-                var accessToken = Context.Request.Query["access_token"];
+                var accessToken = Context.Request.Cookies["access_token"];
 
-                // If the request is for our hub...
                 var path = Context.HttpContext.Request.Path;
                 if (!string.IsNullOrEmpty(accessToken) &&
                     (path.StartsWithSegments("/chat")))
                 {
-                    // Read the token out of the query string
                     Context.Token = accessToken;
                 }
                 return Task.CompletedTask;

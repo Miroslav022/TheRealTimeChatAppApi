@@ -25,7 +25,6 @@ namespace RealTimeChatApp.Domain.Entities
         public ICollection<Contact> Contacts { get; set; } = new HashSet<Contact>();
         public ICollection<Notification> Notifications { get; set; } = new HashSet<Notification>();
         public ICollection<BlockedContact> BlockedContacts { get; set; } = new HashSet<BlockedContact>();
-
         public ICollection<UserPresence> UserPresence { get; set; } = new HashSet<UserPresence>();
 
 

@@ -2,9 +2,13 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
+using RealTimeChatApp.Application.UseCases.Users.Commands.CurrentUser;
 using RealTimeChatApp.Application.UseCases.Users.Commands.Login;
+using RealTimeChatApp.Application.UseCases.Users.Commands.RefreshToken;
 using RealTimeChatApp.Application.UseCases.Users.Commands.RegisterUser;
 using RealTimeChatApp.Domain.Shared;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Real_Time_Chat_App.Controllers
 {
@@ -32,12 +36,77 @@ namespace Real_Time_Chat_App.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LoginMember([FromBody] LoginCommand command, CancellationToken cancellationToken)
         {
-            Result<string> tokenResult = await Sender.Send(command, cancellationToken);
+            Result<AuthenticationDto> tokenResult = await Sender.Send(command, cancellationToken);
             if (tokenResult.IsFailure)
             {
                 return HandleFailure(tokenResult);
             }
-            return Ok(tokenResult.Value);
+            Response.Cookies.Append("access_token", tokenResult.Value.Access_token, new CookieOptions
+            {
+                HttpOnly = true,
+                //Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTime.UtcNow.AddMinutes(20)
+            });
+            Response.Cookies.Append("refresh_token", tokenResult.Value.Refresh_token, new CookieOptions
+            {
+                HttpOnly = true,
+                //Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTime.UtcNow.AddDays(7)
+            });
+            var tokenst = Response.Cookies;
+            //return Ok(tokenResult.Value);
+            return Ok();
+        }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("access_token");
+            Response.Cookies.Delete("refresh_token");
+
+            return Ok();
+        }
+
+        [HttpPost("refresh_token")]
+        public async Task<IActionResult> RefreshToken()
+        {
+            var refresh_token = Request.Cookies["refresh_token"];
+            var command = new RefreshTokenCommand(refresh_token);
+            var result = await Sender.Send(command);
+            if(result.IsFailure)
+            {
+                return Unauthorized(
+                new ProblemDetails
+                {
+                    Title = "Unauthorized",
+                    Type = result.Error.Code,
+                    Detail = result.Error.Message,
+                    Status = StatusCodes.Status401Unauthorized
+                });
+            }
+            Response.Cookies.Append("access_token", result.Value, new CookieOptions
+            {
+                HttpOnly = true,
+                //Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTime.UtcNow.AddMinutes(20)
+            });
+            return Ok();
+        }
+
+        [HttpGet("current_user")]
+        public async Task<IActionResult> CurrentUser()
+        {
+            string accessToken = Request.Cookies["access_token"];
+            var command = new CurrentUserCommand(accessToken);
+            var result = await Sender.Send(command);
+            if (result.IsFailure)
+            {
+                return HandleFailure(result);
+            }
+            return Ok(result);
         }
     }
 }

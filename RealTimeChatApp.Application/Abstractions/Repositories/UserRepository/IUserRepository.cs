@@ -7,4 +7,5 @@ public interface IUserRepository
 {
     void Add(User user);
     User GetByEmail(string email);
+    Task<User> GetUserByIdAsync(string id);
 }

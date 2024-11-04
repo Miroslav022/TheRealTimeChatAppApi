@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Real_Time_Chat_App.OptionsSetup;
 using RealTimeChatApp.Application.Abstractions.Jwt;
 using RealTimeChatApp.Infrastructure.Authentication;
+using RealTimeChatApp.Application.Abstractions.Services;
+using RealTimeChatApp.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +28,8 @@ builder.Services.AddTransient<IUserValidationRules, UserValidationRules>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IJwtProvider, JwtProvider>();
+builder.Services.AddTransient<IJwtRefreshProvider, RefreshJwtProvider>();
+builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();
 builder.Services.AddTransient<RealTimeChatApp.Application.Services.AuthenticationService, RealTimeChatApp.Application.Services.AuthenticationService>();
 builder.Services.AddValidatorsFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly, includeInternalTypes: true);
 
