@@ -28,6 +28,7 @@ public class CurrentUserCommandHandler : ICommandHandler<CurrentUserCommand, Cur
         {
             return new CurrentUserDto
             {
+                Id = currentUser.Id,
                 Email = currentUser.Email,
                 Username = currentUser.Username,
                 PhoneNumber = currentUser.PhoneNumber,

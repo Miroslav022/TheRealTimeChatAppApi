@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using RealTimeChatApp.Application.UseCases.Users.Commands.CurrentUser;
@@ -7,8 +6,6 @@ using RealTimeChatApp.Application.UseCases.Users.Commands.Login;
 using RealTimeChatApp.Application.UseCases.Users.Commands.RefreshToken;
 using RealTimeChatApp.Application.UseCases.Users.Commands.RegisterUser;
 using RealTimeChatApp.Domain.Shared;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Real_Time_Chat_App.Controllers
 {
@@ -44,14 +41,14 @@ namespace Real_Time_Chat_App.Controllers
             Response.Cookies.Append("access_token", tokenResult.Value.Access_token, new CookieOptions
             {
                 HttpOnly = true,
-                //Secure = true,
+                Secure = true,
                 SameSite = SameSiteMode.None,
                 Expires = DateTime.UtcNow.AddMinutes(20)
             });
             Response.Cookies.Append("refresh_token", tokenResult.Value.Refresh_token, new CookieOptions
             {
                 HttpOnly = true,
-                //Secure = true,
+                Secure = true,
                 SameSite = SameSiteMode.None,
                 Expires = DateTime.UtcNow.AddDays(7)
             });
@@ -89,7 +86,7 @@ namespace Real_Time_Chat_App.Controllers
             Response.Cookies.Append("access_token", result.Value, new CookieOptions
             {
                 HttpOnly = true,
-                //Secure = true,
+                Secure = true,
                 SameSite = SameSiteMode.None,
                 Expires = DateTime.UtcNow.AddMinutes(20)
             });

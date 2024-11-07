@@ -51,10 +51,10 @@ builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("reactApp", builder =>
     {
-        builder.WithOrigins("http://localhost:5173")
+        builder.WithOrigins("https://localhost:5173")
+               .AllowCredentials()
                .AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials();
+               .AllowAnyMethod();
     });
 });
 

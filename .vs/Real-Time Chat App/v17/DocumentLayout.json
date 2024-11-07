@@ -7,16 +7,24 @@
       "RelativeMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|solutionrelative:real-time chat app\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\real-time chat app\\optionssetup\\jwtbeareroptionssetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|solutionrelative:real-time chat app\\optionssetup\\jwtbeareroptionssetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|solutionrelative:realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|solutionrelative:realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|solutionrelative:realtimechatapp.application\\usecases\\users\\commands\\currentuser\\currentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\real-time chat app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|solutionrelative:real-time chat app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\realtimechatapp.application\\usecases\\users\\commands\\refreshtoken\\refreshtokencommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DEA2DDA-B23C-43B3-A0BC-7897F675A118}|RealTimeChatApp.Application\\RealTimeChatApp.Application.csproj|solutionrelative:realtimechatapp.application\\usecases\\users\\commands\\refreshtoken\\refreshtokencommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|d:\\projects\\real time chat app\\real-time-chat-app-api\\real-time chat app\\real-time chat app\\optionssetup\\jwtbeareroptionssetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C2B0744-B663-4DDB-8498-309FD9F6DA2E}|Real-Time Chat App\\Real-Time Chat App.csproj|solutionrelative:real-time chat app\\optionssetup\\jwtbeareroptionssetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CurrentUserCommandHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommandHandler.cs",
+              "RelativeDocumentMoniker": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommandHandler.cs",
+              "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommandHandler.cs",
+              "RelativeToolTip": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T22:04:20.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CurrentUserDto.cs",
+              "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserDto.cs",
+              "RelativeDocumentMoniker": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserDto.cs",
+              "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserDto.cs",
+              "RelativeToolTip": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T22:04:04.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\Program.cs",
+              "RelativeDocumentMoniker": "Real-Time Chat App\\Program.cs",
+              "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\Program.cs",
+              "RelativeToolTip": "Real-Time Chat App\\Program.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T20:21:14.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "JwtBearerOptionsSetup.cs",
               "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\OptionsSetup\\JwtBearerOptionsSetup.cs",
               "RelativeDocumentMoniker": "Real-Time Chat App\\OptionsSetup\\JwtBearerOptionsSetup.cs",
@@ -38,21 +85,7 @@
               "RelativeToolTip": "Real-Time Chat App\\OptionsSetup\\JwtBearerOptionsSetup.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwCQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T12:53:41.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CurrentUserCommand.cs",
-              "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommand.cs",
-              "RelativeDocumentMoniker": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommand.cs",
-              "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommand.cs",
-              "RelativeToolTip": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\CurrentUser\\CurrentUserCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T11:03:04.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T12:53:41.757Z"
             },
             {
               "$type": "Document",
@@ -62,20 +95,20 @@
               "RelativeDocumentMoniker": "Real-Time Chat App\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Real-Time Chat App\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAswGQAAAAIAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAUwGEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T15:57:42.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RefreshTokenCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\RefreshToken\\RefreshTokenCommandHandler.cs",
               "RelativeDocumentMoniker": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\RefreshToken\\RefreshTokenCommandHandler.cs",
               "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.Application\\UseCases\\Users\\Commands\\RefreshToken\\RefreshTokenCommandHandler.cs",
               "RelativeToolTip": "RealTimeChatApp.Application\\UseCases\\Users\\Commands\\RefreshToken\\RefreshTokenCommandHandler.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAqwCMAAAAJAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T15:57:42.875Z"
             }
