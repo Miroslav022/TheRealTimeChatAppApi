@@ -25,11 +25,14 @@ builder.Services.AddMediatR(config =>
 });
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 builder.Services.AddTransient<IUserValidationRules, UserValidationRules>();
+builder.Services.AddTransient<IConversationValidationRules,  ConversationValidationRules>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IJwtProvider, JwtProvider>();
 builder.Services.AddTransient<IJwtRefreshProvider, RefreshJwtProvider>();
 builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();
+builder.Services.AddTransient<IConversationRepository, ConversationRepository>();
+builder.Services.AddTransient<IChatRepository, ChatRepository>();
 builder.Services.AddTransient<RealTimeChatApp.Application.Services.AuthenticationService, RealTimeChatApp.Application.Services.AuthenticationService>();
 builder.Services.AddValidatorsFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly, includeInternalTypes: true);
 

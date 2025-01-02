@@ -21,7 +21,8 @@ namespace RealTimeChatApp.Infrastructure.Configurations
             builder.HasOne(x => x.MessageType)
                    .WithMany(x => x.Messages)
                    .HasForeignKey(x => x.MessageTypeId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .IsRequired(false);
 
             builder.Property(x => x.IsRead).HasDefaultValue(false);
 

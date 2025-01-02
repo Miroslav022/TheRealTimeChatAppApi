@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Errors\" />
+    <Folder Include="UseCases\Conversations\Commands\" />
   </ItemGroup>
 
 </Project>

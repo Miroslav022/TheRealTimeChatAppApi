@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using RealTimeChatApp.Application.Abstractions.Repositories.UserRepository;
 using RealTimeChatApp.Application.Abstractions.ValidationRules;
+
 
 namespace RealTimeChatApp.Application.UseCases.Users.Commands.RegisterUser;
 public class UserRegistrationCommandValidator : AbstractValidator<UserRegistrationCommand>

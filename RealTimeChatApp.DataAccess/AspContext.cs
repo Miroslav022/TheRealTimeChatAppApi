@@ -53,9 +53,5 @@ namespace RealTimeChatApp.Infrastructure
         public DbSet<UserPresence> UserPresences { get; set; }
         public DbSet<MessageType> MessageTypes { get; set; }
         public DbSet<Media> Medias { get; set; }
-
-
-
-
     }
 }

@@ -1,8 +1,9 @@
-﻿using System.Security.Claims;
+﻿using RealTimeChatApp.Domain.Shared;
+using System.Security.Claims;
 
 namespace RealTimeChatApp.Application.Abstractions.Services;
 
 public interface IJwtTokenService
 {
-    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
+    public Result<ClaimsPrincipal> GetPrincipalFromExpiredToken(string token);
 }

@@ -22,7 +22,8 @@ public class CurrentUserCommandHandler : ICommandHandler<CurrentUserCommand, Cur
     {
         string access_token = request.Token;
         var principal = _jwtTokenService.GetPrincipalFromExpiredToken(access_token);
-        var UserId = principal.FindFirst(JwtRegisteredClaimNames.Sub);
+        if (principal.Error.Code != String.Empty && principal.Error.Description != String.Empty) return Result.Failure<CurrentUserDto>(principal.Error);
+        var UserId = principal.Value.FindFirst(JwtRegisteredClaimNames.Sub);
         User currentUser = await _userRepository.GetUserByIdAsync(UserId.Value);
         if (currentUser is not null)
         {
@@ -36,6 +37,6 @@ public class CurrentUserCommandHandler : ICommandHandler<CurrentUserCommand, Cur
                 IsBlocked = currentUser.IsBlocked,
             };
         }
-        return Result.Failure<CurrentUserDto>(new Error("Invalid_User_Id", "User with the provided id doesn't exist"));
+        return Result.Failure<CurrentUserDto>(Error.NotFound("Invalid_User_Id", "User with the provided id doesn't exist"));
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RealTimeChatApp.Application.Abstractions.Services;
+using RealTimeChatApp.Domain.Shared;
 using RealTimeChatApp.Infrastructure.Authentication;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -17,8 +18,11 @@ public class JwtTokenService : IJwtTokenService
         _jwtOptions = jwtOptions.Value;
     }
 
-    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+    public Result<ClaimsPrincipal> GetPrincipalFromExpiredToken(string token)
     {
+        if (token is null) return Result.Failure<ClaimsPrincipal>(Error.UnAuthorized("Token.Null", "There is no user token"));
+
+
         var tokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,

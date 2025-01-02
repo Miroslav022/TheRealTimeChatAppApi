@@ -10,10 +10,10 @@ namespace RealTimeChatApp.Domain.Entities
     {
         public int ConversationId { get; set; }
         public int SenderId { get; set; }
-        public string? Content { get; set; }
+        public string? MessageContent { get; set; }
         public int MessageTypeId { get; set; }
         public bool IsRead { get; set; }
-        public int RepliedToMessageId { get; set; }
+        public int? RepliedToMessageId { get; set; }
 
         public Conversation? Conversation { get; set; }
         public MessageType? MessageType { get; set; }

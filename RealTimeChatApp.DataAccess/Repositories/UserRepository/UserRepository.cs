@@ -32,4 +32,10 @@ public class UserRepository : IUserRepository
         User user = _context.Users.FirstOrDefault(x=>x.Id == int.Parse(id));
         return user;
     }
+
+    public IEnumerable<User> GetUserByPhoneNumber(string PhoneNumber)
+    {
+        IEnumerable<User> users = _context.Users.Where(x=>x.PhoneNumber.Contains(PhoneNumber));
+        return users;
+    }
 }

@@ -40,7 +40,7 @@ public abstract class ApiController : ControllerBase
         {
             Title = title,
             Type = error.Code,
-            Detail = error.Message,
+            Detail = error.Description,
             Status = status,
             Extensions = { { nameof(errors), errors } }
         };

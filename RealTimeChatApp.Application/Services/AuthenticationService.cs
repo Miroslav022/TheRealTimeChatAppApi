@@ -18,11 +18,11 @@ public class AuthenticationService
     {
         var user = _userRepository.GetByEmail(email);
         if (user == null) {
-            return Result.Failure<User>(new Error("Authentication Failed", "User not found"));
+            return Result.Failure<User>(Error.NotFound("Authentication Failed", "User not found"));
         }
 
         if (!PasswordHelper.VerifyPassword(password, user.PasswordHash)) {
-            return Result.Failure<User>(new Error("Authentication Failed", "Invalid credentials"));
+            return Result.Failure<User>(Error.Validation("Authentication Failed", "Invalid credentials"));
         }
         return Result.Success(user);
     }

@@ -22,7 +22,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.BlockedContact", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.BlockedContact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("BlockedContacts");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Contact", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Contact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,7 +94,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Conversation", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Conversation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Conversations");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.ConversationParticipant", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.ConversationParticipant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -178,7 +178,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("ConversationParticipants");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Media", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Media", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -218,16 +218,13 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Medias");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Message", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ConversationId")
                         .HasColumnType("int");
@@ -247,10 +244,13 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("MessageContent")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MessageTypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RepliedToMessageId")
+                    b.Property<int?>("RepliedToMessageId")
                         .HasColumnType("int");
 
                     b.Property<int>("SenderId")
@@ -272,7 +272,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.MessageType", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.MessageType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -302,7 +302,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("MessageTypes");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Notification", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Notification", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -342,7 +342,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Notifications");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.User", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -413,7 +413,7 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.UserPresence", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.UserPresence", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -452,15 +452,15 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.ToTable("UserPresences");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.BlockedContact", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.BlockedContact", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.User", "BlockedUser")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "BlockedUser")
                         .WithMany()
                         .HasForeignKey("BlockedUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("RealTimeChatApp.Domain.User", "User")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "User")
                         .WithMany("BlockedContacts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -471,15 +471,15 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Contact", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Contact", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.User", "ContactUser")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "ContactUser")
                         .WithMany()
                         .HasForeignKey("ContactUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("RealTimeChatApp.Domain.User", "User")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "User")
                         .WithMany("Contacts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -490,9 +490,9 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Conversation", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Conversation", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.User", "CreatedByUser")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "CreatedByUser")
                         .WithMany("Conversations")
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -501,15 +501,15 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("CreatedByUser");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.ConversationParticipant", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.ConversationParticipant", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.Conversation", "Conversation")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.Conversation", "Conversation")
                         .WithMany("Participants")
                         .HasForeignKey("ConversationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("RealTimeChatApp.Domain.User", "User")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "User")
                         .WithMany("ConversationParticipants")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -520,15 +520,15 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Media", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Media", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.MessageType", "MediaType")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.MessageType", "MediaType")
                         .WithMany("Medias")
                         .HasForeignKey("MediaTypeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("RealTimeChatApp.Domain.Message", "Message")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.Message", "Message")
                         .WithMany("Media")
                         .HasForeignKey("MessageId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -539,26 +539,25 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("Message");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Message", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Message", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.Conversation", "Conversation")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.Conversation", "Conversation")
                         .WithMany("Messages")
                         .HasForeignKey("ConversationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("RealTimeChatApp.Domain.MessageType", "MessageType")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.MessageType", "MessageType")
                         .WithMany("Messages")
                         .HasForeignKey("MessageTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("RealTimeChatApp.Domain.Message", "RepliedToMessage")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.Message", "RepliedToMessage")
                         .WithMany("Replies")
                         .HasForeignKey("RepliedToMessageId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("RealTimeChatApp.Domain.User", "Sender")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "Sender")
                         .WithMany("Messages")
                         .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -573,9 +572,9 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Notification", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Notification", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.User", "User")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "User")
                         .WithMany("Notifications")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -584,9 +583,9 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.UserPresence", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.UserPresence", b =>
                 {
-                    b.HasOne("RealTimeChatApp.Domain.User", "User")
+                    b.HasOne("RealTimeChatApp.Domain.Entities.User", "User")
                         .WithMany("UserPresence")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -595,28 +594,28 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Conversation", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Conversation", b =>
                 {
                     b.Navigation("Messages");
 
                     b.Navigation("Participants");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.Message", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.Message", b =>
                 {
                     b.Navigation("Media");
 
                     b.Navigation("Replies");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.MessageType", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.MessageType", b =>
                 {
                     b.Navigation("Medias");
 
                     b.Navigation("Messages");
                 });
 
-            modelBuilder.Entity("RealTimeChatApp.Domain.User", b =>
+            modelBuilder.Entity("RealTimeChatApp.Domain.Entities.User", b =>
                 {
                     b.Navigation("BlockedContacts");
 

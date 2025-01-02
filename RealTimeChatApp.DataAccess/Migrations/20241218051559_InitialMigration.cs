@@ -220,10 +220,10 @@ namespace RealTimeChatApp.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ConversationId = table.Column<int>(type: "int", nullable: false),
                     SenderId = table.Column<int>(type: "int", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MessageContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MessageTypeId = table.Column<int>(type: "int", nullable: false),
                     IsRead = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    RepliedToMessageId = table.Column<int>(type: "int", nullable: false),
+                    RepliedToMessageId = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)

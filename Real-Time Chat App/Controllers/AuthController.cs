@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
+using Real_Time_Chat_App.SharedKernel;
 using RealTimeChatApp.Application.UseCases.Users.Commands.CurrentUser;
 using RealTimeChatApp.Application.UseCases.Users.Commands.Login;
 using RealTimeChatApp.Application.UseCases.Users.Commands.RefreshToken;
@@ -25,7 +26,7 @@ namespace Real_Time_Chat_App.Controllers
             Result result = await Sender.Send(command);
             if (result.IsFailure)
             {
-                return HandleFailure(result);
+                return result.ToProblemDetails();
             }
             return Ok(result);
         }
@@ -36,7 +37,7 @@ namespace Real_Time_Chat_App.Controllers
             Result<AuthenticationDto> tokenResult = await Sender.Send(command, cancellationToken);
             if (tokenResult.IsFailure)
             {
-                return HandleFailure(tokenResult);
+                return tokenResult.ToProblemDetails();
             }
             Response.Cookies.Append("access_token", tokenResult.Value.Access_token, new CookieOptions
             {
@@ -79,7 +80,7 @@ namespace Real_Time_Chat_App.Controllers
                 {
                     Title = "Unauthorized",
                     Type = result.Error.Code,
-                    Detail = result.Error.Message,
+                    Detail = result.Error.Description,
                     Status = StatusCodes.Status401Unauthorized
                 });
             }
@@ -101,7 +102,7 @@ namespace Real_Time_Chat_App.Controllers
             var result = await Sender.Send(command);
             if (result.IsFailure)
             {
-                return HandleFailure(result);
+                return result.ToProblemDetails();
             }
             return Ok(result);
         }

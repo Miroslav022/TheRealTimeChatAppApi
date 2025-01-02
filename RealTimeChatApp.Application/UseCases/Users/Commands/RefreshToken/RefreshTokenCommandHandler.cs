@@ -26,7 +26,7 @@ public class RefreshTokenCommandHandler : ICommandHandler<RefreshTokenCommand, s
     {
         if (request.refresh_token == null) 
         {
-            return Result.Failure<string>(new Error("Obtain token failed", "You don't have refresh token"));
+            return Result.Failure<string>(Error.UnAuthorized("Obtain token failed", "You don't have refresh token"));
         }
         var principal = _jwtTokenService.GetPrincipalFromExpiredToken(request.refresh_token);
 
@@ -35,23 +35,20 @@ public class RefreshTokenCommandHandler : ICommandHandler<RefreshTokenCommand, s
             throw new UnauthorizedAccessException("Invalid refresh token");
         }
 
-        var userIdClaim = principal.FindFirst(JwtRegisteredClaimNames.Sub);
+        var userIdClaim = principal.Value.FindFirst(JwtRegisteredClaimNames.Sub);
         if (userIdClaim == null)
         {
             throw new UnauthorizedAccessException("Invalid user");
         }
 
-        // Step 3: Fetch user from the database
         var user = await _userRepository.GetUserByIdAsync(userIdClaim.Value);
         if (user == null)
         {
             throw new UnauthorizedAccessException("User not found");
         }
 
-        // Step 4: Generate a new access token for the user
         var newAccessToken = _jwtProvider.Generate(user);
 
-        // Step 5: Return the new access token
         return newAccessToken;
     }
 
