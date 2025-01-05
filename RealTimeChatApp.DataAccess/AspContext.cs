@@ -16,6 +16,7 @@ namespace RealTimeChatApp.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+            modelBuilder.Entity<Message>().ToTable(tb => tb.UseSqlOutputClause(false));
             base.OnModelCreating(modelBuilder);
         }
         public override int SaveChanges()
