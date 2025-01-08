@@ -61,6 +61,11 @@ namespace Real_Time_Chat_App.SignalR
             await Clients.Group(roomId).SendAsync("ReceivePrivateMessage", Context.User.Identity.Name, chatMessageDto.message, $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
         }
 
+        public async Task TypingNotification(string roomId, string userName)
+        {
+            await Clients.OthersInGroup(roomId).SendAsync("ReceiveTypingNotification", userName);
+        }
+
         public async Task JoinGroup(string groupName)
         {
             await this.Groups.AddToGroupAsync(this.Context.ConnectionId, groupName);
