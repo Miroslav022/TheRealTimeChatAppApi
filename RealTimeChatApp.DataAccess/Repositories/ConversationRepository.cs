@@ -46,7 +46,6 @@ public class ConversationRepository : IConversationRepository
     {
 
         //REFACTOR !!!!!!
-
         var conversations = await _aspContext.ConversationParticipants
         .Where(x => (x.Conversation.CreatedBy == id && !x.Conversation.Messages.Any()) || (x.UserId == id && x.Conversation.Messages.Any()))
         .Select(x => new

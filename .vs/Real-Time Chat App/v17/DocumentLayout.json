@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Real-Time Chat App\\SignalR\\ChatHub.cs",
               "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\SignalR\\ChatHub.cs",
               "RelativeToolTip": "Real-Time Chat App\\SignalR\\ChatHub.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwEAAAAAIAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAIwEYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T11:30:34.071Z",
               "EditorCaption": ""
@@ -89,9 +89,10 @@
               "RelativeDocumentMoniker": "RealTimeChatApp.DataAccess\\Repositories\\ConversationRepository.cs",
               "ToolTip": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\RealTimeChatApp.DataAccess\\Repositories\\ConversationRepository.cs",
               "RelativeToolTip": "RealTimeChatApp.DataAccess\\Repositories\\ConversationRepository.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAQwBMAAAAIAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAvwE0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T05:05:59.229Z"
+              "WhenOpened": "2024-12-18T05:05:59.229Z",
+              "EditorCaption": ""
             }
           ]
         }
