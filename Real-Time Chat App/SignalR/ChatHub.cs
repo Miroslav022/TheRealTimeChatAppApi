@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.SignalR;
 using Real_Time_Chat_App.SignalR.DTOs;
 using RealTimeChatApp.Application.Abstractions.Repositories;
+using RealTimeChatApp.Application.Abstractions.Repositories.UserRepository;
 using RealTimeChatApp.Application.UseCases.Conversations.DTOs;
 using RealTimeChatApp.Domain.Entities;
 
@@ -11,19 +12,24 @@ namespace Real_Time_Chat_App.SignalR
     public sealed class ChatHub : Hub
     {
         private static Dictionary<string, string> _connectedUsers = new();
-        private static Dictionary<string, IReadOnlyList<ConversationDto>> _userContacts = new();
+        private List<OnlineUsersDto> _userContacts = new();
+
+
         private readonly IChatRepository _chatRepository;
         private readonly IConversationRepository _conversationRepository;
-
-        public ChatHub(IChatRepository chatRepository, IConversationRepository conversationRepository)
+        private readonly IUserRepository _userRepository;
+        public ChatHub(IChatRepository chatRepository, IConversationRepository conversationRepository, IUserRepository userRepository)
         {
             _chatRepository = chatRepository;
             _conversationRepository = conversationRepository;
+            _userRepository = userRepository;
         }
 
         public override async Task OnConnectedAsync()
         {
             var userId = Context?.UserIdentifier;
+            var userObject = _userRepository.GetUserByIdAsync(userId);
+            
             if(!string.IsNullOrEmpty(userId))
             {
                 _connectedUsers.Add(Context.ConnectionId, userId);
@@ -32,19 +38,25 @@ namespace Real_Time_Chat_App.SignalR
 
                 if(contacts != null)
                 {
-                    _userContacts.Add(userId, contacts);
                     foreach (var contact in contacts)
                     {
                         var contactConnectionId = _connectedUsers.FirstOrDefault(x => x.Value == contact.UserId.ToString()).Key;
                         if(contactConnectionId != null)
                         {
-                            await Clients.Client(contactConnectionId).SendAsync("UserStatusChanged", userId, true);
+                            if (int.Parse(userId) == contact.UserId) return;
+
+                            var onlineContact = new OnlineUsersDto(contact.UserId, contact.username, contact.id);
+                            _userContacts.Add(onlineContact);
+
+                            var onlineUserObject = new OnlineUsersDto(int.Parse(userId), userObject.Result.Username, contact.id);
+
+                            await Clients.Client(contactConnectionId).SendAsync("newOnlineUser", onlineUserObject);
                         }
 
                     }
-                }
 
-                await Clients.All.SendAsync("UserStatusChanged", userId);
+                    await Clients.Client(Context.ConnectionId).SendAsync("UserStatusChanged", _userContacts);
+                }
             }
             var user = Context?.User?.Identity?.Name;
             
@@ -54,24 +66,15 @@ namespace Real_Time_Chat_App.SignalR
         public override async Task OnDisconnectedAsync(Exception exception)
         {
             var userId = Context?.UserIdentifier;
-            if(!string.IsNullOrEmpty(userId))
+            if (!string.IsNullOrEmpty(userId))
             {
                 _connectedUsers.Remove(Context.ConnectionId);
 
-                if(_userContacts.TryGetValue(userId, out var contacts))
-                {
-                    foreach (var contact in contacts)
-                    {
-                        var contactConnectionId = _connectedUsers.FirstOrDefault(x => x.Value == contact.UserId.ToString()).Key;
-                        if(contactConnectionId != null)
-                        {
-                            await Clients.Client(contactConnectionId).SendAsync("UserStatusChanged", userId, false);
-                        }
-                await Clients.All.SendAsync("UserStatusChanged", userId);
-            }
-            await base.OnDisconnectedAsync(exception);
-        }
+                await Clients.Clients(_connectedUsers.Keys).SendAsync("UserWentOffline", userId);
 
+                await base.OnDisconnectedAsync(exception);
+            }
+        }
         private string GenerateRoomId(int user1Id, int user2Id)
         {
             return string.Join("-", new List<int> { user1Id, user2Id }.OrderBy(id => id));
