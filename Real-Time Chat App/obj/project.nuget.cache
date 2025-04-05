@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b2wpJ72lzMU=",
+  "dgSpecHash": "XEJLTWxGstE=",
   "success": true,
   "projectFilePath": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\Real-Time Chat App.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\8.0.8\\microsoft.aspnetcore.connections.abstractions.8.0.8.nupkg.sha512",
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\8.0.8\\microsoft.aspnetcore.http.connections.client.8.0.8.nupkg.sha512",
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\8.0.8\\microsoft.aspnetcore.http.connections.common.8.0.8.nupkg.sha512",
+    "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\8.0.8\\microsoft.aspnetcore.signalr.client.8.0.8.nupkg.sha512",
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\8.0.8\\microsoft.aspnetcore.signalr.client.core.8.0.8.nupkg.sha512",
     "C:\\Users\\jandr\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\8.0.8\\microsoft.aspnetcore.signalr.common.8.0.8.nupkg.sha512",

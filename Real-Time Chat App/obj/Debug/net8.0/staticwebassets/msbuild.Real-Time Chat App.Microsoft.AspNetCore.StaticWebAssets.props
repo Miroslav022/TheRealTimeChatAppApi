@@ -1,0 +1,166 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\181fd63f-12bc-469e-be00-d515b64bc9f3.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/181fd63f-12bc-469e-be00-d515b64bc9f3.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\181fd63f-12bc-469e-be00-d515b64bc9f3.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\32a59c80-6610-49d8-8468-72d876af7a78.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/32a59c80-6610-49d8-8468-72d876af7a78.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\32a59c80-6610-49d8-8468-72d876af7a78.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\524394a5-c8bc-4369-b805-fe5e71b12a79.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/524394a5-c8bc-4369-b805-fe5e71b12a79.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\524394a5-c8bc-4369-b805-fe5e71b12a79.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\693fcf59-2d97-44d3-8c38-a92001243d27.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/693fcf59-2d97-44d3-8c38-a92001243d27.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>asbm0cgfsu</Fingerprint>
+      <Integrity>KlWa16sASKEQX/NzA+2cuk4bcUTSjhcThVFXESta1+8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\693fcf59-2d97-44d3-8c38-a92001243d27.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w51ecct7p1</Fingerprint>
+      <Integrity>nDbtUDuJJ2rZYS820oJb7iCwoLZqRictoPBnr4GwKkw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\8248f093-be82-4e0a-9e63-a18ddd686f68.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/8248f093-be82-4e0a-9e63-a18ddd686f68.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\8248f093-be82-4e0a-9e63-a18ddd686f68.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\avatar.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/avatar.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>59vs93t5yq</Fingerprint>
+      <Integrity>x82+O8SyCMH9i6MOgQ7aH4KnTWnueAc++aCP6LQFBfk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\avatar.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\d5b18966-7a18-459e-9bca-a4e1b174419f.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Real-Time Chat App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Real-Time Chat App</BasePath>
+      <RelativePath>Uploads/d5b18966-7a18-459e-9bca-a4e1b174419f.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlc284mohq</Fingerprint>
+      <Integrity>R6TDipI5pmgijaykk5BtQ7VV4/I7cPUQg0ydy9cIXUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\d5b18966-7a18-459e-9bca-a4e1b174419f.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

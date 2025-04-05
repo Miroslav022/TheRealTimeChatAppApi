@@ -143,6 +143,12 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0",
+          "System.IO.Pipelines": "8.0.0"
+        }
+      },
       "Microsoft.AspNetCore.SignalR.Client/8.0.8": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Connections.Client": "8.0.8",
@@ -768,16 +774,23 @@
         "dependencies": {
           "FluentValidation": "11.9.2",
           "MediatR": "12.4.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "RealTimeChatApp.Domain": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.1.2"
         },
         "runtime": {
-          "RealTimeChatApp.Application.dll": {}
+          "RealTimeChatApp.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RealTimeChatApp.Domain/1.0.0": {
         "runtime": {
-          "RealTimeChatApp.Domain.dll": {}
+          "RealTimeChatApp.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RealTimeChatApp.Infrastructure/1.0.0": {
@@ -791,7 +804,10 @@
           "RealTimeChatApp.Domain": "1.0.0"
         },
         "runtime": {
-          "RealTimeChatApp.Infrastructure.dll": {}
+          "RealTimeChatApp.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -871,6 +887,13 @@
       "sha512": "sha512-+dH9RZFAsiqi8ATIiZGfPYpet6BFvoHCBh01uYocMyI2QUlu/vT23BYc2ciAlLq0ljFha8CQ59th4wknWdDa+g==",
       "path": "microsoft.aspnetcore.http.connections.common/8.0.8",
       "hashPath": "microsoft.aspnetcore.http.connections.common.8.0.8.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "hashPath": "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512"
     },
     "Microsoft.AspNetCore.SignalR.Client/8.0.8": {
       "type": "package",

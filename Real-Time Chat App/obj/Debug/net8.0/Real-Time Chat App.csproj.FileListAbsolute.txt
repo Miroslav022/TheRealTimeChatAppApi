@@ -94,3 +94,8 @@ D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Ti
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Real-Time Chat App.staticwebassets.runtime.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\bin\Debug\net8.0\Real-Time Chat App.staticwebassets.endpoints.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\staticwebassets\msbuild.Real-Time Chat App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Projects\Real Time Chat App\real-time-chat-app-api\Real-Time Chat App\Real-Time Chat App\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -40,15 +40,15 @@ namespace Real_Time_Chat_App.SignalR
                 {
                     foreach (var contact in contacts)
                     {
-                        var contactConnectionId = _connectedUsers.FirstOrDefault(x => x.Value == contact.UserId.ToString()).Key;
+                        var contactConnectionId = _connectedUsers.FirstOrDefault(x => x.Value == contact.Participant.id.ToString()).Key;
                         if(contactConnectionId != null)
                         {
-                            if (int.Parse(userId) == contact.UserId) return;
+                            if (int.Parse(userId) == contact.Participant.id) return;
 
-                            var onlineContact = new OnlineUsersDto(contact.UserId, contact.username, contact.id);
+                            var onlineContact = new OnlineUsersDto(contact.Participant.id, contact.Participant.userName, contact.Participant.profilePicture ,contact.id);
                             _userContacts.Add(onlineContact);
 
-                            var onlineUserObject = new OnlineUsersDto(int.Parse(userId), userObject.Result.Username, contact.id);
+                            var onlineUserObject = new OnlineUsersDto(int.Parse(userId), userObject.Result.Username, userObject.Result.ProfilePicture, contact.id);
 
                             await Clients.Client(contactConnectionId).SendAsync("newOnlineUser", onlineUserObject);
                         }

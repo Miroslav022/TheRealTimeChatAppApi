@@ -33,6 +33,7 @@ builder.Services.AddTransient<IJwtRefreshProvider, RefreshJwtProvider>();
 builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();
 builder.Services.AddTransient<IConversationRepository, ConversationRepository>();
 builder.Services.AddTransient<IChatRepository, ChatRepository>();
+builder.Services.AddTransient<IFileUploadRepository, FileUploadRepository>();
 builder.Services.AddTransient<RealTimeChatApp.Application.Services.AuthenticationService, RealTimeChatApp.Application.Services.AuthenticationService>();
 builder.Services.AddValidatorsFromAssembly(RealTimeChatApp.Application.AssemblyReference.Assembly, includeInternalTypes: true);
 
@@ -79,4 +80,5 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<ChatHub>("chat");
 app.UseCors("reactApp");
+app.UseStaticFiles();
 app.Run();

@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\181fd63f-12bc-469e-be00-d515b64bc9f3.png",
+      "PackagePath": "staticwebassets\\Uploads\\181fd63f-12bc-469e-be00-d515b64bc9f3.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\32a59c80-6610-49d8-8468-72d876af7a78.png",
+      "PackagePath": "staticwebassets\\Uploads\\32a59c80-6610-49d8-8468-72d876af7a78.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\524394a5-c8bc-4369-b805-fe5e71b12a79.png",
+      "PackagePath": "staticwebassets\\Uploads\\524394a5-c8bc-4369-b805-fe5e71b12a79.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\693fcf59-2d97-44d3-8c38-a92001243d27.png",
+      "PackagePath": "staticwebassets\\Uploads\\693fcf59-2d97-44d3-8c38-a92001243d27.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png",
+      "PackagePath": "staticwebassets\\Uploads\\78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\8248f093-be82-4e0a-9e63-a18ddd686f68.png",
+      "PackagePath": "staticwebassets\\Uploads\\8248f093-be82-4e0a-9e63-a18ddd686f68.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\avatar.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\avatar.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\d5b18966-7a18-459e-9bca-a4e1b174419f.png",
+      "PackagePath": "staticwebassets\\Uploads\\d5b18966-7a18-459e-9bca-a4e1b174419f.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Real-Time Chat App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Real-Time Chat App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Real-Time Chat App.props",
+      "PackagePath": "build\\Real-Time Chat App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Real-Time Chat App.props",
+      "PackagePath": "buildMultiTargeting\\Real-Time Chat App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Real-Time Chat App.props",
+      "PackagePath": "buildTransitive\\Real-Time Chat App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
