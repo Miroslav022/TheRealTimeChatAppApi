@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.SignalR;
 using Real_Time_Chat_App.SignalR.DTOs;
 using RealTimeChatApp.Application.Abstractions.Repositories;
 using RealTimeChatApp.Application.Abstractions.Repositories.UserRepository;
+using RealTimeChatApp.Application.Dtos;
 using RealTimeChatApp.Application.UseCases.Conversations.DTOs;
 using RealTimeChatApp.Domain.Entities;
 
@@ -41,16 +42,22 @@ namespace Real_Time_Chat_App.SignalR
                     foreach (var contact in contacts)
                     {
                         var contactConnectionId = _connectedUsers.FirstOrDefault(x => x.Value == contact.Participant.id.ToString()).Key;
-                        if(contactConnectionId != null)
+                        if (contactConnectionId != null)
                         {
                             if (int.Parse(userId) == contact.Participant.id) return;
 
-                            var onlineContact = new OnlineUsersDto(contact.Participant.id, contact.Participant.userName, contact.Participant.profilePicture ,contact.id);
-                            _userContacts.Add(onlineContact);
+                            if (!contact.Participant.isBlocked)
+                            {
+                                var onlineContact = new OnlineUsersDto(contact.Participant.id, contact.Participant.userName, contact.Participant.profilePicture, contact.id, contact.Participant.isBlocked);
+                                _userContacts.Add(onlineContact);
+                            }
 
-                            var onlineUserObject = new OnlineUsersDto(int.Parse(userId), userObject.Result.Username, userObject.Result.ProfilePicture, contact.id);
-
-                            await Clients.Client(contactConnectionId).SendAsync("newOnlineUser", onlineUserObject);
+                            var newOnlineUser = await _chatRepository.GetNewOnlineUser(contact.Participant.id, int.Parse(userId));
+                            if (newOnlineUser != null)
+                            {
+                                NewOnlineUserDto newUser = new NewOnlineUserDto(newOnlineUser.Id, newOnlineUser.Username, newOnlineUser.ProfilePicture, false, contact.id);
+                                await Clients.Client(contactConnectionId).SendAsync("newOnlineUser", newUser);
+                            }
                         }
 
                     }
@@ -99,7 +106,7 @@ namespace Real_Time_Chat_App.SignalR
                 SenderId = chatMessageDto.senderId,
                 MessageTypeId = chatMessageDto.messageTypeId,
                 MessageContent = chatMessageDto.message,
-                RepliedToMessageId = null,
+                RepliedToMessageId = chatMessageDto.replyToMessageId
             };
             try
             {

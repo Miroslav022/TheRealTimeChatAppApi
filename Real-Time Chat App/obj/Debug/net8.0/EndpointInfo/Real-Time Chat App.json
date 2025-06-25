@@ -103,6 +103,28 @@
         }
       }
     },
+    "/api/Contact": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Conversation/conversation": {
       "post": {
         "tags": [
@@ -156,6 +178,37 @@
         }
       }
     },
+    "/api/Conversation/groupchat": {
+      "post": {
+        "tags": [
+          "Conversation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGroupChatCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGroupChatCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGroupChatCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/FileUpload/upload": {
       "post": {
         "tags": [
@@ -188,7 +241,7 @@
         }
       }
     },
-    "/api/Message": {
+    "/api/message": {
       "get": {
         "tags": [
           "Message"
@@ -197,6 +250,29 @@
           {
             "name": "conversationId",
             "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/message/{id}": {
+      "delete": {
+        "tags": [
+          "Message"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -406,6 +482,28 @@
           "userId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateGroupChatCommand": {
+        "type": "object",
+        "properties": {
+          "createdById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "participantIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

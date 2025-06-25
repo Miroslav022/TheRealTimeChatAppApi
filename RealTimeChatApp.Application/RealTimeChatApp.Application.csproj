@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Errors\" />
-    <Folder Include="UseCases\Conversations\Commands\" />
+    <Folder Include="UseCases\Contacts\Commands\" />
   </ItemGroup>
 
 </Project>

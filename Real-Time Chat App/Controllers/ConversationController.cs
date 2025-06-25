@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using Real_Time_Chat_App.SharedKernel;
+using RealTimeChatApp.Application.UseCases.Conversations.Commands;
 using RealTimeChatApp.Application.UseCases.Conversations.Queries;
 using RealTimeChatApp.Application.UseCases.Users.Commands.Conversations;
 using RealTimeChatApp.Domain.Shared;
@@ -36,6 +37,19 @@ namespace Real_Time_Chat_App.Controllers
             {
                 return result.ToProblemDetails();
             }
+            return Ok(result);
+        }
+
+        [HttpPost("groupchat")]
+        public async Task<IActionResult> CreateGroupChat([FromBody] CreateGroupChatCommand command, CancellationToken cancellationToken)
+        {
+            Result result = await Sender.Send(command);
+            if(result.IsFailure)
+            {
+                return result.ToProblemDetails();
+            }
+
+            //Send message to the front using signalR
             return Ok(result);
         }
     }

@@ -22,15 +22,17 @@ public class MessageQueryHandler : IQueryHandler<MessageQuery, List<MessagesDto>
             return (Result<List<MessagesDto>>)Result<List<MessagesDto>>.Failure(Error.NotFound("NoMessages", "There are no messages in store"));
         }
 
-        var message = messagesResult.Value.Select(x =>
+        var message = messagesResult.Value.Where(x=>!x.IsDeleted).Select(x =>
         new MessagesDto
         {
+            id = x.Id,
             SenderId = x.SenderId,
             SenderUserName = x.Sender.Username,
             MessageContent = x.MessageContent,
             MessageType = x.MessageTypeId,
             IsRead = x.IsRead,
             RepliedToMessageId = x.RepliedToMessageId,
+            RepliedToMessage = new RepliedToMessage { SenderUserName = x.RepliedToMessage?.Sender?.Username, MessageContent = x?.RepliedToMessage?.MessageContent},
             CreatedAt = x.CreatedAt,
             IsDeleteed = x.IsDeleted
         }

@@ -1,4 +1,5 @@
-﻿using RealTimeChatApp.Application.UseCases.Messages.DTOs;
+﻿using RealTimeChatApp.Application.Dtos;
+using RealTimeChatApp.Application.UseCases.Messages.DTOs;
 using RealTimeChatApp.Domain.Entities;
 using RealTimeChatApp.Domain.Shared;
 
@@ -8,4 +9,7 @@ public interface IChatRepository
 {
     Task SaveMessageAsync(Message message);
     Task<Result<IReadOnlyList<Message>>> GetMessages(int ConversationId);
+    Task<User?> GetNewOnlineUser(int currentUserId, int newUserId);
+    Task<bool> DeleteMessage(int messageId, int userId);
+
 }
