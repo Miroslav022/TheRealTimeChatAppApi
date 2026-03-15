@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using Real_Time_Chat_App.SharedKernel;
@@ -39,13 +40,7 @@ namespace Real_Time_Chat_App.Controllers
             {
                 return tokenResult.ToProblemDetails();
             }
-            Response.Cookies.Append("access_token", tokenResult.Value.Access_token, new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTime.UtcNow.AddMinutes(20)
-            });
+
             Response.Cookies.Append("refresh_token", tokenResult.Value.Refresh_token, new CookieOptions
             {
                 HttpOnly = true,
@@ -54,14 +49,13 @@ namespace Real_Time_Chat_App.Controllers
                 Expires = DateTime.UtcNow.AddDays(7)
             });
             var tokenst = Response.Cookies;
-            //return Ok(tokenResult.Value);
-            return Ok();
+            return Ok(tokenResult.Value.Access_token);
         }
 
+        [Authorize]
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            Response.Cookies.Delete("access_token");
             Response.Cookies.Delete("refresh_token");
 
             return Ok();
@@ -73,7 +67,7 @@ namespace Real_Time_Chat_App.Controllers
             var refresh_token = Request.Cookies["refresh_token"];
             var command = new RefreshTokenCommand(refresh_token);
             var result = await Sender.Send(command);
-            if(result.IsFailure)
+            if (result.IsFailure)
             {
                 return Unauthorized(
                 new ProblemDetails
@@ -84,20 +78,20 @@ namespace Real_Time_Chat_App.Controllers
                     Status = StatusCodes.Status401Unauthorized
                 });
             }
-            Response.Cookies.Append("access_token", result.Value, new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTime.UtcNow.AddMinutes(20)
-            });
-            return Ok();
+            return Ok(result.Value);
         }
 
+        [Authorize]
         [HttpGet("current_user")]
         public async Task<IActionResult> CurrentUser()
         {
-            string accessToken = Request.Cookies["access_token"];
+            var authHeader = Request.Headers["Authorization"].ToString();
+            string accessToken = null;
+            if (!string.IsNullOrEmpty(authHeader) && authHeader.StartsWith("Bearer "))
+            {
+                accessToken = authHeader.Substring("Bearer ".Length).Trim();
+            }
+
             var command = new CurrentUserCommand(accessToken);
             var result = await Sender.Send(command);
             if (result.IsFailure)

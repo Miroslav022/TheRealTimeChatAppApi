@@ -16,24 +16,40 @@ public class ConversationRepository : IConversationRepository
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<bool> CreateConversation(Conversation conversation, List<ConversationParticipant> participants, List<int> ids, CancellationToken cancellationToken)
+    public async Task<Conversation> CreateConversation(int createdById, List<int> participantIds, CancellationToken cancellationToken)
     {
-        ids = ids.Distinct().ToList();
-        var existingConversation = await _aspContext.Conversations.Where(c => c.Participants.Count == ids.Count && c.Participants.All(p => ids.Contains(p.UserId))).FirstOrDefaultAsync(cancellationToken);
+        participantIds = participantIds.Distinct().ToList();
+        var existingConversation = await _aspContext.Conversations.Include(x => x.Participants).ThenInclude(x => x.User).Where(c => c.Participants.Count == participantIds.Count && c.Participants.All(p => participantIds.Contains(p.UserId))).FirstOrDefaultAsync(cancellationToken);
         if (existingConversation != null)
         {
-            return true;
+            return existingConversation;
         }
         using (var transaction = _aspContext.Database.BeginTransaction())
         {
             try
             {
+                Conversation conversation = new Conversation
+                {
+                    CreatedBy = createdById,
+                    LastMessageAt = DateTime.Now,
+                };
+
+                var users = _aspContext.Users.Where(x => participantIds.Contains(x.Id)).ToDictionary(x => x.Id);
+
+                var participants = participantIds.Select(id => new ConversationParticipant
+                {
+                    Conversation = conversation,
+                    UserId = id,
+                    IsAdmin = id == createdById ? true : false,
+                    User = users[id]
+                });
+
                 await _aspContext.Conversations.AddAsync(conversation);
                 await _aspContext.ConversationParticipants.AddRangeAsync(participants);
                 await _aspContext.SaveChangesAsync(cancellationToken);
 
                 await transaction.CommitAsync(cancellationToken);
-                return true;
+                return conversation;
             }
             catch (Exception ex)
             {
@@ -47,37 +63,68 @@ public class ConversationRepository : IConversationRepository
     public async Task<IReadOnlyList<ConversationDto>> GetAllUsersConversations(int id, CancellationToken cancellationToken)
     {
 
-        var conversations = await _aspContext.Conversations
-        .Where(x => (x.CreatedBy == id && !x.Messages.Any()) || (x.Messages.Any() && x.Participants.Any(p=>p.UserId == id)))
-        .Select(x => new
-        {
-            x.Id,
-            x.GroupName,
-            x.IsGroup,
-            x.LastMessageAt,
-            Participant = x.Participants.Where(participant => participant.UserId != id).Select(participant => new ParticipantsDto
-            (
-                participant.UserId,
-                participant.User.Username,
-                participant.User.ProfilePicture,
-                x.CreatedByUser != null && x.CreatedByUser.BlockedContacts.Any(bc => bc.BlockedUserId == participant.UserId)
-            )).FirstOrDefault(),
-            LastMessage = x.Messages.OrderByDescending(m=>m.CreatedAt).FirstOrDefault(m => !m.IsDeleted)
-        })
-        .ToListAsync(cancellationToken);
+        var conversationsRaw = await _aspContext.Conversations
+            .AsNoTracking()
+            .Where(x =>
+                (x.CreatedBy == id && !x.Messages.Any()) ||
+                ((x.Messages.Any() || x.IsGroup) && x.Participants.Any(p => p.UserId == id)))
+            .Select(x => new
+            {
+                x.Id,
+                x.GroupName,
+                x.IsGroup,
+                x.LastMessageAt,
+                x.CreatedByUser,
+                Participants = x.Participants.Select(participant => new
+                {
+                    participant.UserId,
+                    participant.User.Username,
+                    participant.User.ProfilePicture,
+                }),
+                LastMessage = x.Messages.Where(m => !m.IsDeleted).OrderByDescending(m => m.CreatedAt).FirstOrDefault()
+            })
+            .ToListAsync(cancellationToken);
 
-        var result = conversations.Select(x => new ConversationDto(
-            x.Id,
-            x.GroupName,
-            x.IsGroup,
-            x.LastMessageAt,
-            true, // Redudant
-            x.LastMessage?.SenderId ?? 0,
-            x.LastMessage?.IsRead ?? false,
-            x.LastMessage?.MessageContent ?? string.Empty,
-            x.Participant
-        )).ToList();
+        var blockedIds = await _aspContext.BlockedContacts
+            .Where(x => x.UserId == id)
+            .Select(bc => bc.BlockedUserId)
+            .ToListAsync(cancellationToken);
+
+        var result = conversationsRaw.Select(x =>
+        {
+            var participants = x.Participants.Where(p => p.UserId != id)
+            .Select(p => new ParticipantsDto
+            (
+                p.UserId,
+                p.Username,
+                p.ProfilePicture,
+                blockedIds.Contains(p.UserId)
+            )).ToList();
+
+            var otherUser = participants.FirstOrDefault();
+            var displayName = x.IsGroup ? x.GroupName : otherUser?.userName;
+            var displayPicture = x.IsGroup ? "groupDefault.png" : otherUser?.profilePicture;
+            var isRead = x.LastMessage is not null && x.LastMessage.SenderId != id ? x.LastMessage.IsRead : true;
+
+            return new ConversationDto
+            (
+                x.Id,
+                displayName,
+                displayPicture,
+                x.IsGroup,
+                x.LastMessageAt,
+                x.LastMessage?.SenderId ?? 0,
+                isRead,
+                x.LastMessage?.MessageContent ?? string.Empty,
+                participants
+            );
+        }).ToList();
         return result;
+    }
+
+    public async Task<IReadOnlyCollection<Conversation>> getAllUserConversationsWithoutGroups(int id, CancellationToken cancellationToken = default)
+    {
+        return await _aspContext.ConversationParticipants.Where(x => x.UserId == id && !x.Conversation.IsGroup).Include(x => x.Conversation.Participants).Select(x => x.Conversation).ToListAsync(cancellationToken);
     }
 
     public async Task Insert(Conversation conversation, CancellationToken cancellationToken)

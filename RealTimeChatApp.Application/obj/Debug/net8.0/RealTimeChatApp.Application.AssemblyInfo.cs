@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RealTimeChatApp.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29b8d9e7ea79ba799719e096058b32c71b92c387")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97e1aa82080a7603fe18451c4d65008b7ba7b484")]
 [assembly: System.Reflection.AssemblyProductAttribute("RealTimeChatApp.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealTimeChatApp.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

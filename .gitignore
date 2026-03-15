@@ -1,0 +1,56 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.dbmdl
+
+# Build results
+bin/
+obj/
+out/
+
+# Rider / ReSharper
+*.ReSharper.*
+_ReSharper.*
+*.DotSettings.user
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Rider
+.idea/
+
+# ASP.NET temporary files
+*.log
+*.vsix
+*.nupkg
+
+# NuGet
+*.nupkg
+# Packages folder can be ignored if you restore via NuGet
+packages/
+*.snupkg
+
+# Microsoft Azure Web App publish settings
+*.Publish.xml
+
+# IIS Express
+/.vs/
+appsettings.*.json
+
+# Rider or VSCode caches
+*.sln.ide
+*.sln.DotSettings
+
+# Others
+*.DS_Store
+*.userprefs
+*.db
+*.bak
+*.Backup
+*.vsidx
+*.lock.json

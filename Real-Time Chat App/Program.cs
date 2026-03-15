@@ -75,11 +75,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("reactApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<ChatHub>("chat");
-app.UseCors("reactApp");
 app.UseStaticFiles();
 app.Run();

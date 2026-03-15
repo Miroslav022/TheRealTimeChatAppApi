@@ -17,7 +17,7 @@ public class ContactQueryHandler : IQueryHandler<ContactsQuery, IReadOnlyCollect
 
     public async Task<Result<IReadOnlyCollection<ContactsDto>>> Handle(ContactsQuery request, CancellationToken cancellationToken)
     {
-        List<Contact> contacts = await _contactRepository.getContact(request.id);
+        List<Contact> contacts = await _contactRepository.getContacts(request.id);
 
         if (contacts is null)
         {

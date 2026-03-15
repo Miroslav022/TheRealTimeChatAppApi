@@ -1,5 +1,5 @@
 ﻿namespace Real_Time_Chat_App.SignalR.DTOs;
 
-public record OnlineUsersDto(int UserId, string UserName, string profilePicture, int id, bool isBlocked)
+public record OnlineUsersDto(int UserId, string displayName, string displayImage, int id, bool isBlocked)
 {
 }

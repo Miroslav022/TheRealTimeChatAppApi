@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("f2ad5d22-2f02-4a17-9ee5-ae627facf9ac")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Real-Time Chat App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29b8d9e7ea79ba799719e096058b32c71b92c387")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97e1aa82080a7603fe18451c4d65008b7ba7b484")]
 [assembly: System.Reflection.AssemblyProductAttribute("Real-Time Chat App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Real-Time Chat App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

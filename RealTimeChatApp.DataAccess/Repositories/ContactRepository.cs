@@ -15,13 +15,16 @@ public class ContactRepository : IContactRepository
 
     public void CreateContact(int userId, int contactUserId)
     {
+        var contactExists = _aspContext.Contacts.Any(x => x.UserId == userId && x.ContactUserId == contactUserId);
+        if (contactExists) return;
+
         Contact contact = new Contact { UserId = userId, ContactUserId = contactUserId };
         _aspContext.Contacts.Add(contact);
         _aspContext.SaveChanges();
     }
      
-    public async Task<List<Contact>> getContact(int userId)
+    public async Task<List<Contact>> getContacts(int userId)
     {
-        return _aspContext.Contacts.Include(x=>x.ContactUser).Where(x=>x.UserId == userId).ToList();
+        return _aspContext.Contacts.Include(x=>x.ContactUser).Include(x=>x.User).Where(x=>x.UserId == userId).ToList();
     }
 }

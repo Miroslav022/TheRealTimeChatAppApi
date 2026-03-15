@@ -24,7 +24,10 @@ public class ChatRepository : IChatRepository
     public async Task<Result<IReadOnlyList<Message>>> GetMessages(int ConversationId)
     {
         var messages = await _aspContext.Conversations.Include(x=>x.Messages).ThenInclude(x=>x.Sender).FirstOrDefaultAsync(x => x.Id == ConversationId );
-        return messages.Messages.ToList();
+        
+        if(messages is not null) return messages.Messages.ToList();
+
+        return new List<Message> { };
     }
 
 

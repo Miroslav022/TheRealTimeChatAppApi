@@ -1,12 +1,11 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using Real_Time_Chat_App.SharedKernel;
 using RealTimeChatApp.Application.UseCases.Messages.Command;
 using RealTimeChatApp.Application.UseCases.Messages.Query;
 using RealTimeChatApp.Domain.Shared;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Real_Time_Chat_App.Controllers
 {
@@ -19,6 +18,7 @@ namespace Real_Time_Chat_App.Controllers
             
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetMessages([FromQuery] MessageQuery query, CancellationToken cancellationToken) 
         {
@@ -30,6 +30,7 @@ namespace Real_Time_Chat_App.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMessage(int id, CancellationToken cancellationToken)
         {

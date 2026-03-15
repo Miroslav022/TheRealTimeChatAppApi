@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Uploads\\32a59c80-6610-49d8-8468-72d876af7a78.png"
     },
     {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\3683dc81-6cb7-49a3-bbaf-04390ac72455.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\3683dc81-6cb7-49a3-bbaf-04390ac72455.jpg"
+    },
+    {
       "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\524394a5-c8bc-4369-b805-fe5e71b12a79.png",
       "PackagePath": "staticwebassets\\Uploads\\524394a5-c8bc-4369-b805-fe5e71b12a79.png"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg",
       "PackagePath": "staticwebassets\\Uploads\\6c60e79f-ac01-4753-9e96-3fdfc4f076c7.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\71809e8b-995b-4583-9158-b80706c5b872.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\71809e8b-995b-4583-9158-b80706c5b872.jpg"
     },
     {
       "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\78e79920-2ce6-4f38-b2f6-f0f2fc69845d.png",
@@ -35,6 +43,14 @@
     {
       "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\d5b18966-7a18-459e-9bca-a4e1b174419f.png",
       "PackagePath": "staticwebassets\\Uploads\\d5b18966-7a18-459e-9bca-a4e1b174419f.png"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\f0a785d4-2704-452e-8ac5-52259090ec18.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\f0a785d4-2704-452e-8ac5-52259090ec18.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Real Time Chat App\\real-time-chat-app-api\\Real-Time Chat App\\Real-Time Chat App\\wwwroot\\Uploads\\groupDefault.png",
+      "PackagePath": "staticwebassets\\Uploads\\groupDefault.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Real-Time Chat App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

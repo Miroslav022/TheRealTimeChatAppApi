@@ -20,7 +20,8 @@ public sealed class CreateGroupChatCommandHandler : ICommandHandler<CreateGroupC
         {
             CreatedBy = request.createdById,
             IsGroup = true,
-            GroupName = request.groupName
+            GroupName = request.groupName,
+            LastMessageAt = DateTime.Now,
         };
 
         var participants = request.participantIds.Select(x => new ConversationParticipant { UserId = x, IsAdmin = false }).ToList();
@@ -30,6 +31,7 @@ public sealed class CreateGroupChatCommandHandler : ICommandHandler<CreateGroupC
 
         await _conversationRepository.Insert(groupConversation, cancellationToken);
 
+        // notify users
         return Result.Success();
     }
 }

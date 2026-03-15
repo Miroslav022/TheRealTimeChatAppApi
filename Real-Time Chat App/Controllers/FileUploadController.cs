@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using Real_Time_Chat_App.SharedKernel;
@@ -17,6 +18,7 @@ namespace Real_Time_Chat_App.Controllers
         }
 
         // POST api/<FileUploadController>
+        [Authorize]
         [HttpPost("upload")]
         public async Task<IActionResult> Post(IFormFile file, CancellationToken cancellationToken)
         {

@@ -1,6 +1,5 @@
 ﻿using RealTimeChatApp.Application.UseCases.Users.Commands.EditUser;
 using RealTimeChatApp.Domain.Entities;
-using RealTimeChatApp.Domain.Shared;
 
 namespace RealTimeChatApp.Application.Abstractions.Repositories.UserRepository;
 
@@ -15,4 +14,5 @@ public interface IUserRepository
     Task<bool> UpdateProfilePictureAsync(int id, string fileName);
     Task<bool> BlockUser(int userId, int blockedUserId);
     Task<bool> UnblockUser(int userId, int blockedUserId);
+    Task<bool> IsUserBlocked(int userId, int blockedUserId);
 }

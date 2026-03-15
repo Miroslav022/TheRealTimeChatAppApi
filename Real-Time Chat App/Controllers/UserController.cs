@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
@@ -20,6 +21,7 @@ namespace Real_Time_Chat_App.Controllers
         {
         }
 
+        [Authorize]
         [HttpGet("Search/{Phone}")]
         public async Task<IActionResult> GetUserByPhone(string Phone, CancellationToken cancellationToken)
         {
@@ -32,6 +34,7 @@ namespace Real_Time_Chat_App.Controllers
             return Ok(result.Value);
         }
 
+        [Authorize]
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateUser([FromBody] EditUserCommand command, int id, CancellationToken cancellationToken)
         {
@@ -44,6 +47,7 @@ namespace Real_Time_Chat_App.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPost("editimage/{id}")]
         public async Task<IActionResult> EditUserProfileImage(IFormFile File, int id,  CancellationToken cancellationToken)
         {
@@ -56,6 +60,7 @@ namespace Real_Time_Chat_App.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPost("block")]
         public async Task<IActionResult> BlockUser([FromBody] BlockUserCommand command, CancellationToken cancellationToken)
         {
@@ -67,6 +72,7 @@ namespace Real_Time_Chat_App.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPost("unblock")]
         public async Task<IActionResult> UnblockUser([FromBody] UnblockUserCommand command, CancellationToken cancellationToken)
         {

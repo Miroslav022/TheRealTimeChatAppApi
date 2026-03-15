@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Real_Time_Chat_App.Abstraction;
 using Real_Time_Chat_App.SharedKernel;
@@ -15,6 +16,7 @@ namespace Real_Time_Chat_App.Controllers
         {
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Contacts([FromQuery] ContactsQuery query, CancellationToken cancellationToken) 
         {
